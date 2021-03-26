@@ -3,10 +3,11 @@ import { Switch, Route} from 'react-router-dom'
 
 import AuthContext from './../contexts/AuthContext'
 
-import Landing from './Landing'
-import PlayerMain from './PlayerMain';
+import Landing from './pages/Landing'
+import PlayerMain from './pages/PlayerMain';
 import Register from './register/Register';
 import NoMatch from './pages/NoMatch'
+import Profile from './profile/Profile';
 
 function App() {
   const { loggedInStatus } = useContext(AuthContext)
@@ -14,7 +15,10 @@ function App() {
   const authRoutes = () => {
     if (loggedInStatus === 'LOGGED_IN') {
       return (
-        <Route path="/player-main" component={PlayerMain}/> 
+        <div>
+          <Route path="/player-main" component={PlayerMain}/>
+          <Route path="/profile" component={Profile} />
+        </div>
       )
     }
   }

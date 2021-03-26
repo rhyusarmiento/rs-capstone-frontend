@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 
 import AuthContext from '../../contexts/AuthContext'
@@ -100,6 +101,7 @@ function Register() {
                 />
                 <button type='submit'>Submit</button>
             </form>
+            <NavLink exact to="/">Back to Login</NavLink>
         </div>
     )
 }

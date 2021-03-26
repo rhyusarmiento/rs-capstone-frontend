@@ -8,7 +8,7 @@ function AuthForm() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     
-    const { handleSuccessfulLogin, handleRegister } = useContext(AuthContext)
+    const { handleSuccessfulLogin } = useContext(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()

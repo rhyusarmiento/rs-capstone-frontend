@@ -5,9 +5,9 @@ import { NavLink } from "react-router-dom";
 function Navigation() {
     return (
         <div>
-            {/* <NavLink exact to='/'>
-                Login
-            </NavLink> */}
+            <NavLink exact to='/player-main'>
+                Home
+            </NavLink>
         </div>
     )
 }

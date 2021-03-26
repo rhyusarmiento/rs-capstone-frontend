@@ -15,8 +15,11 @@ const AuthProvider = (props) => {
             withCredentials: true
         })
             .then(res => {
-                if (res.data === "User Logged Via Cookie") {
+                if (res.data === "logged in via cookie") {
                     setLoggedInStatus('LOGGED_IN')
+                } else if (res.data === 'not logged in') {
+                    setLoggedInStatus('NOT_LOGGED_IN')
+                    history.push('/')
                 }
             })
             .catch(err => console.log(err))
@@ -35,8 +38,7 @@ const AuthProvider = (props) => {
         })
             .then(res => {
                 setLoggedInStatus('NOT_LOGGED_IN')
-                // also can use redirect if need on other page
-                // return <Redirect to="/" />
+                history.push('/')
             })
             .catch(err => console.log(err))
     }
