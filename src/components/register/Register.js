@@ -29,7 +29,19 @@ function Register() {
             withCredentials: true,
         })
             .then(res => {
-                handleSuccessfulLogin()
+                axios({
+                    method: 'post',
+                    url: `http://localhost:5000/api/login`,
+                    data: {
+                        username, 
+                        password,
+                    },
+                    withCredentials: true,
+                })
+                    .then(res => {
+                        handleSuccessfulLogin()
+                    })
+                    .catch(err => console.log(err))
             })
             .catch(err => console.log(err))
     }
