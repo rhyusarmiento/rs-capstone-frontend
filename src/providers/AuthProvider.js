@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 
 import AuthContext from '../contexts/AuthContext'
 
 const AuthProvider = (props) => {
     const [loggedInStatus, setLoggedInStatus] = useState('NOT_LOGGED_IN')
+    let history = useHistory()
 
     useEffect(() => {
         axios({
@@ -20,12 +22,9 @@ const AuthProvider = (props) => {
             .catch(err => console.log(err))
     }, [])
 
-    const handleRegister = () => {
-        setLoggedInStatus('REGISTER')
-    }
-
     const handleSuccessfulLogin = () => {
         setLoggedInStatus('LOGGED_IN')
+        history.push('/player-main')
     }
 
     const handleSuccessfulLogout = () => {
@@ -47,7 +46,6 @@ const AuthProvider = (props) => {
         setLoggedInStatus,
         handleSuccessfulLogout,
         handleSuccessfulLogin,
-        handleRegister,
     }
 
     return (

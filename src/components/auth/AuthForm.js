@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
-import axios from 'axios'
 import { NavLink } from 'react-router-dom'
+import axios from 'axios'
 
 import AuthContext from '../../contexts/AuthContext'
 
@@ -22,7 +22,6 @@ function AuthForm() {
             withCredentials: true,
         })
             .then(res => {
-                console.log(res)
                 handleSuccessfulLogin()
             })
             .catch(err => console.log(err))
@@ -48,7 +47,7 @@ function AuthForm() {
                 />
                 <button type='submit'>Login</button>
             </form>
-            <div onClick={handleRegister}>Register</div>
+            <NavLink exact to='/register'>Register</NavLink>
         </div>
     )
 }
