@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import axios from 'axios'
+import { NavLink } from 'react-router-dom'
 
 import AuthContext from '../../contexts/AuthContext'
 
@@ -7,7 +8,7 @@ function AuthForm() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     
-    const { handleSuccessfulLogin } = useContext(AuthContext)
+    const { handleSuccessfulLogin, handleRegister } = useContext(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -47,6 +48,7 @@ function AuthForm() {
                 />
                 <button type='submit'>Login</button>
             </form>
+            <div onClick={handleRegister}>Register</div>
         </div>
     )
 }

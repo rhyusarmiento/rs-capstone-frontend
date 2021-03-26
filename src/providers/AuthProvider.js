@@ -20,6 +20,10 @@ const AuthProvider = (props) => {
             .catch(err => console.log(err))
     }, [])
 
+    const handleRegister = () => {
+        setLoggedInStatus('REGISTER')
+    }
+
     const handleSuccessfulLogin = () => {
         setLoggedInStatus('LOGGED_IN')
     }
@@ -43,6 +47,7 @@ const AuthProvider = (props) => {
         setLoggedInStatus,
         handleSuccessfulLogout,
         handleSuccessfulLogin,
+        handleRegister,
     }
 
     return (
