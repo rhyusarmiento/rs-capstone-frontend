@@ -6,6 +6,7 @@ import AuthContext from '../contexts/AuthContext'
 
 const AuthProvider = (props) => {
     const [loggedInStatus, setLoggedInStatus] = useState('NOT_LOGGED_IN')
+    const [playerId, setPlayerId] = useState(null)
     let history = useHistory()
 
     useEffect(() => {
@@ -17,6 +18,7 @@ const AuthProvider = (props) => {
             .then(res => {
                 if (res.data === "logged in via cookie") {
                     setLoggedInStatus('LOGGED_IN')
+                    history.push('/player-main')
                 } else if (res.data === 'not logged in') {
                     setLoggedInStatus('NOT_LOGGED_IN')
                     history.push('/')
@@ -48,6 +50,7 @@ const AuthProvider = (props) => {
         setLoggedInStatus,
         handleSuccessfulLogout,
         handleSuccessfulLogin,
+        setPlayerId,
     }
 
     return (

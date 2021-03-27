@@ -12,7 +12,7 @@ function Register() {
     const [state, setState] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
 
-    const { handleSuccessfulLogin } = useContext(AuthContext)
+    const { handleSuccessfulLogin, setPlayerId } = useContext(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -40,6 +40,7 @@ function Register() {
                     withCredentials: true,
                 })
                     .then(res => {
+                        setPlayerId(res)
                         handleSuccessfulLogin()
                     })
                     .catch(err => console.log(err))
