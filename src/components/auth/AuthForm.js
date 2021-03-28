@@ -8,7 +8,7 @@ function AuthForm() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     
-    const { handleSuccessfulLogin, setPlayerId } = useContext(AuthContext)
+    const { handleSuccessfulLogin } = useContext(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -22,8 +22,7 @@ function AuthForm() {
             withCredentials: true,
         })
             .then(res => {
-                setPlayerId(res.data)
-                handleSuccessfulLogin()
+                handleSuccessfulLogin(res)
             })
             .catch(err => console.log(err))
     }

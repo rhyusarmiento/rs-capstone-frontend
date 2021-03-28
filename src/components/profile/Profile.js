@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect } from 'react'
 import axios from 'axios'
 
-import LogoutButton from './LogoutButton'
 import PlayerInfo from './PlayerInfo'
+import LogoutButton from './LogoutButton'
 
 function Profile() {
     const [name, setName] = useState('')
@@ -10,16 +10,31 @@ function Profile() {
     const [state, setState] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
 
-    // useEffect(() => {
-    //     axios({
-    //         method: 'get',
-    //         url:
-    //     })
-    // })
+    useEffect(() => {
+        axios({
+            method: 'get',
+            url: `http://localhost:5000/api/get-single-player/${localStorage.getItem('playerId')}`,
+            withCredentials: true
+        })
+            .then(res => {
+                setName(res.data.name)
+                setCity(res.data.city)
+                setState(res.data.state)
+                setPhoneNumber(res.data.phone_number)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [])
 
     return (
         <div>
-            <PlayerInfo />
+            <PlayerInfo 
+                name={name}
+                city={city}
+                state={state}
+                phoneNumber={phoneNumber}
+            />
             <LogoutButton />
         </div>
     )

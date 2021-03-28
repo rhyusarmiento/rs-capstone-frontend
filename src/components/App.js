@@ -14,7 +14,14 @@ function App() {
   const { loggedInStatus } = useContext(AuthContext)
 
   const authRoutes = () => {
-    if (loggedInStatus === 'LOGGED_IN') {
+    if (loggedInStatus === 'NOT_LOGGED_IN') {
+      return (
+        <div>
+          <Route exact path="/" component={Landing}/> 
+          <Route path="/register" component={Register}/>
+        </div>
+      )
+    } else if (loggedInStatus === 'LOGGED_IN') {
       return (
         <div>
           <Navigation />
@@ -23,15 +30,13 @@ function App() {
             <Route path="/profile" component={Profile} />
           </div>
         </div>
-      )
+      )      
     }
   }
 
   return (
     <div className="App">
-      <Switch>
-        <Route exact path="/" component={Landing}/> 
-        <Route path="/register" component={Register}/> 
+      <Switch> 
         {authRoutes()}
         <Route component={NoMatch} />
       </Switch>

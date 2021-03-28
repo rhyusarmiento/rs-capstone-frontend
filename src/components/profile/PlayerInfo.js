@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
-function PlayerInfo() {
+function PlayerInfo(props) {
     return (
         <div>
-            hi
+            {props.name}
+            {props.city}
+            {props.state}
+            {props.phoneNumber}
         </div>
     )
 }
