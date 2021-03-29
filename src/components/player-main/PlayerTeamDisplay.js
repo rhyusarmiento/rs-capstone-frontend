@@ -4,7 +4,7 @@ import axios from 'axios'
 import TeamItem from './TeamItem'
 
 function PlayerTeamDisplay() {
-    const [playerTeams, setPlayerTeams] = useState(null)
+    const [playerTeams, setPlayerTeams] = useState([])
 
     useEffect(() => {
         axios({
@@ -22,7 +22,7 @@ function PlayerTeamDisplay() {
     }, [])
 
     const teamItems = () => {
-        if (playerTeams === null) {
+        if (playerTeams.length === 0) {
             return (
                 <div>You have Joined no Teams</div>
             )
