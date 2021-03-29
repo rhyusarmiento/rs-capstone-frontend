@@ -1,0 +1,51 @@
+.register-wrapper {
+    @include super-center;
+    flex-direction: column;
+    height: 100vh;
+
+    h1 {
+        font-size: 3rem;
+        color: $navgreen;
+    }
+
+    .register-form-wrapper {
+        @include super-center;
+        width: 40%;
+        height: 550px;
+        background-color: $navgreen;
+
+        form {
+            width: 80%;
+            height: 88%;
+            @include super-center;
+            flex-direction: column;
+
+            .register-input-wrapper {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+
+                input {
+                    padding: 10px 20px;
+                    font-size: 2rem;
+                }
+            }
+
+            button {
+                margin-top: 15px;
+                padding: 10px 20px;
+                background-color: white;
+            }
+        }
+    }
+
+    a {
+        margin-top: 10px;
+        text-decoration: none;
+        color: black;
+        font-size: 2rem;
+    }
+}

@@ -50,57 +50,61 @@ function Register() {
     return (
         <div className='register-wrapper'>
             <h1>Register</h1>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type='text' 
-                    name='username'
-                    placeholder='Username'
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                />
-                <input 
-                    type='password' 
-                    name='password'
-                    placeholder='Password'
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <input 
-                    type='text' 
-                    name='name'
-                    placeholder='Name'
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                />
-                <input 
-                    type='text' 
-                    name='city'
-                    placeholder='City'
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                    required
-                />
-                <input 
-                    type='text' 
-                    name='state'
-                    placeholder='State'
-                    value={state}
-                    onChange={(e) => setState(e.target.value)}
-                    required
-                />
-                <input 
-                    type='text' 
-                    name='phoneNumber'
-                    placeholder='Phone Number'
-                    value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                    required
-                />
-                <button type='submit'>Submit</button>
-            </form>
+            <div className='register-form-wrapper'>
+                <form onSubmit={handleSubmit}>
+                    <div className="register-input-wrapper">
+                        <input 
+                            type='text' 
+                            name='username'
+                            placeholder='Username'
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                        />
+                        <input 
+                            type='password' 
+                            name='password'
+                            placeholder='Password'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                        <input 
+                            type='text' 
+                            name='name'
+                            placeholder='Name'
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                        />
+                        <input 
+                            type='text' 
+                            name='city'
+                            placeholder='City'
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                            required
+                        />
+                        <input 
+                            type='text' 
+                            name='state'
+                            placeholder='State'
+                            value={state}
+                            onChange={(e) => setState(e.target.value)}
+                            required
+                        />
+                        <input 
+                            type='text' 
+                            name='phoneNumber'
+                            placeholder='Phone Number'
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <button type='submit'>Submit</button>
+                </form>
+            </div>
             <NavLink exact to="/">Back to Login</NavLink>
         </div>
     )
