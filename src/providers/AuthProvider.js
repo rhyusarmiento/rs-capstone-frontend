@@ -31,6 +31,7 @@ const AuthProvider = (props) => {
             .catch(err => console.log(err))
     }, [history])
 
+
     const handleSuccessfulLogin = (res) => {
         setLoggedInStatus('LOGGED_IN')
         localStorage.setItem('playerId', res.data)
@@ -55,6 +56,7 @@ const AuthProvider = (props) => {
 
     const state = {
         loggedInStatus,
+        history,
         setLoggedInStatus,
         handleSuccessfulLogout,
         handleSuccessfulLogin,

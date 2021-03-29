@@ -5,10 +5,11 @@ import AuthContext from './../contexts/AuthContext'
 
 import Landing from './pages/Landing'
 import PlayerMain from './pages/PlayerMain';
-import Register from './register/Register';
+import Register from './pages/Register';
 import NoMatch from './pages/NoMatch'
 import Profile from './profile/Profile';
 import Navigation from './Navigation';
+import TeamProfile from './pages/TeamProfile';
 
 function App() {
   const { loggedInStatus } = useContext(AuthContext)
@@ -26,19 +27,30 @@ function App() {
         <div>
           <Navigation />
           <div className='body'>
-            <Route path="/player-main" component={PlayerMain}/>
+            <Route path="/player-main" component={PlayerMain} />
             <Route path="/profile" component={Profile} />
+            <Route 
+              path='/team-profile/:slug' 
+              render={() => (
+                <TeamProfile />
+              )}
+            />
           </div>
         </div>
       )      
+    } else {
+      return (
+        <Route component={NoMatch} />
+      )
     }
   }
 
   return (
     <div className="App">
-      <Switch> 
-        {authRoutes()}
-        <Route component={NoMatch} />
+      <Switch>
+        <React.Fragment>
+          {authRoutes()}
+        </React.Fragment>
       </Switch>
     </div>
   );
