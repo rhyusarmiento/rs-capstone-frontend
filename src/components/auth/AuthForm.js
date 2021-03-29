@@ -28,26 +28,30 @@ function AuthForm() {
     }
 
     return (
-        <div>
+        <div className='login-wrapper'>
             <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="text"
-                    name='username'
-                    placeholder='username...'
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <input 
-                    type="password"
-                    name='password'
-                    placeholder='password...'
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type='submit'>Login</button>
-            </form>
-            <NavLink exact to='/register'>Register</NavLink>
+            <div className='form-wrapper'>
+                <form onSubmit={handleSubmit}>
+                    <div className='input-wrapper'>
+                        <input 
+                            type="text"
+                            name='username'
+                            placeholder='username...'
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                        <input 
+                            type="password"
+                            name='password'
+                            placeholder='password...'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                    <button type='submit'>Login</button>
+                </form>
+            </div>
+            <NavLink exact to='/register'>Register Here</NavLink>
         </div>
     )
 }

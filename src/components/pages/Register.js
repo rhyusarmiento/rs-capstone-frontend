@@ -48,7 +48,7 @@ function Register() {
     }
     
     return (
-        <div>
+        <div className='register-wrapper'>
             <h1>Register</h1>
             <form onSubmit={handleSubmit}>
                 <input 
