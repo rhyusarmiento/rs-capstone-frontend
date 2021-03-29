@@ -10,7 +10,7 @@ function PlayerMain() {
         <div>
             Home Page
             <PlayerTeamDisplay />
-            <NavLink to='/team-search'>See More ...</NavLink>
+            <NavLink to='/team-search'>Find More Teams...</NavLink>
         </div>
     )
 }

@@ -10,6 +10,7 @@ import NoMatch from './pages/NoMatch'
 import Profile from './profile/Profile';
 import Navigation from './Navigation';
 import TeamProfile from './pages/TeamProfile';
+import TeamSearch from './pages/TeamSearch';
 
 function App() {
   const { loggedInStatus } = useContext(AuthContext)
@@ -35,6 +36,7 @@ function App() {
                 <TeamProfile />
               )}
             />
+            <Route path='/team-search' component={TeamSearch} />
           </div>
         </div>
       )      
