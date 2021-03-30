@@ -28,14 +28,18 @@ function Profile() {
     }, [])
 
     return (
-        <div>
-            <PlayerInfo 
-                name={name}
-                city={city}
-                state={state}
-                phoneNumber={phoneNumber}
-            />
-            <LogoutButton />
+        <div className='profile-wrapper'>
+            <div className="profile-content-wrapper">
+                <PlayerInfo 
+                    name={name}
+                    city={city}
+                    state={state}
+                    phoneNumber={phoneNumber}
+                />
+                <div className="profile-settings-wrapper">
+                    <LogoutButton />
+                </div>
+            </div>
         </div>
     )
 }
