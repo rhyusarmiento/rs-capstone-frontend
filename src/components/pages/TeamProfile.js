@@ -82,12 +82,18 @@ function TeamProfile() {
     }
 
     return (
-        <div>
-            {name}
-            {sport}
-            {city}
-            {state}
-            {handleButton()}
+        <div className='team-profile-wrapper'>
+            <div className="team-profile-content">
+                <div className='team-info-wrapper'>
+                    <h2>Name: {name}</h2>
+                    <h2>Sport: {sport}</h2>
+                    <h2>City: {city}</h2>
+                    <h2>State: {state}</h2>
+                </div>
+                <div className="toggle-join-wrapper">
+                    {handleButton()}
+                </div>
+            </div>
         </div>
     )
 }

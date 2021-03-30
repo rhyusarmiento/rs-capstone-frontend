@@ -1,0 +1,30 @@
+.team-profile-wrapper {
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+    height: 100vh;
+
+    .team-profile-content {
+        grid-column: 2;
+        width: 100%;
+
+        .team-info-wrapper {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            font-size: 1.5rem;
+        }
+
+        .toggle-join-wrapper {
+            width: 100%;
+            @include super-center;
+
+            button {
+                @include main-button;
+                padding: 10px 20px;
+            }
+        }
+    }
+}
