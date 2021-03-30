@@ -32,7 +32,7 @@ function TeamProfile() {
         })
             .then(res => {
                 res.data.forEach(team => {
-                    if (team.id == sessionStorage.getItem('tempTeamId')) {
+                    if (team.id === parseInt(sessionStorage.getItem('tempTeamId'))) {
                         setJoinedStatus(true)
                     }
                 })
