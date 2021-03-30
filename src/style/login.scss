@@ -1,15 +1,32 @@
 .landing-wrapper {
+    height: 100vh;
+    width: 100vw;
     display: grid;
-    // margin-top: 50px;
-    grid-template-columns: auto 38% 38% auto;
-    grid-template-rows: 1fr;
+    @media (max-width: 1000px) {
+        grid-template-columns: auto 500px auto;
+        grid-template-rows: auto auto;
+        row-gap: 20px;
+    }
+    @media (min-width: 1000px) {
+        grid-template-columns: auto 500px 500px auto;
+        grid-template-rows: 1fr;
+    }
 
     .landing-bio {
-        grid-column-start: 2;
+        @media (max-width: 1000px) {  
+            height: 400px;
+            grid-row: 2;
+        }
+        grid-column: 2;
         @include super-center;
 
         .bio {
-            font-size: 2rem;
+            @media (max-width: 1000px) {
+                font-size: 3rem;  
+            }
+            @media (min-width: 1000px) {
+                font-size: 2rem;
+            }
             font-family: sans-serif;
             text-align: center;
             margin-right: 20px;
@@ -18,19 +35,35 @@
     }
 
     .login-wrapper {
-        grid-column-start: 3;
-        height: 100vh;
+        @media (max-width: 1000px) {  
+            grid-column: 2;
+            grid-row: 1;
+        }
+        @media (min-width: 1000px) {
+            grid-column: 3;
+        }
+        
         @include super-center;
         flex-direction: column;
 
         h1 {
-            font-size: 3rem;
+            @media (max-width: 1000px) {  
+                font-size: 5.5rem;
+            }
+            @media (min-width: 1000px) {
+                font-size: 3rem;
+            }
             color: $navgreen;
         }
 
         .form-wrapper {
+            @media (max-width: 1000px) {  
+                height: 400px;
+            }
+            @media (min-width: 1000px) {
+                height: 350px;
+            }
             width: 90%;
-            height: 350px;
             background-color: $navgreen;
             @include super-center;
 
@@ -42,27 +75,41 @@
                 flex-direction: column;
 
                 .input-wrapper {
+                    @media (max-width: 1000px) { 
+                        height: 200px;
+                    }
+                    @media (min-width: 1000px) {
+                        height: 150px;
+                    }
                     width: 100%;
-                    height: 150px;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
 
                     input {
-                        padding: 10px 20px;
-                        font-size: 2rem;
-
-                        :focus {
-                            outline: none;
+                        @media (max-width: 1000px) {  
+                            padding: 10px 20px;
+                            font-size: 3.2rem;
+                        }
+                        @media (min-width: 1000px) {
+                            padding: 10px 20px;
+                            font-size: 2rem;
                         }
                     }
                 }
 
                 button {
-                    margin-top: 40px;
-                    padding: 10px 20px;
-                    background-color: white;
+                    @media (max-width: 1000px) {
+                        margin-top: 40px;
+                        padding: 15px 25px;
+                        font-size: 2rem;
+                    }
+                    @media (min-width: 1000px) {
+                        margin-top: 40px;
+                        padding: 10px 20px;
+                    }
+                    @include main-button;
 
                     :focus {
                         outline: none;
@@ -72,11 +119,17 @@
         }
 
         a {
-            margin-top: 10px;
-            margin-left: 60%;
+            @media (max-width: 1000px) {  
+                font-size: 3.5rem;
+                margin-top: 30px;
+            }
+            @media (min-width: 1000px) {
+                font-size: 2rem;
+                margin-left: 60%;
+                margin-top: 10px;
+            }
             text-decoration: none;
             color: black;
-            font-size: 2rem;
         }
     }
 }
