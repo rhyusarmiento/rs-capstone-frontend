@@ -6,7 +6,7 @@ function LogoutButton() {
     const { handleSuccessfulLogout } = useContext(AuthContext)
 
     return (
-        <div>
+        <div className='logout' >
             <button onClick={ handleSuccessfulLogout }>Logout</button>
         </div>
     )

@@ -46,56 +46,58 @@ function PlayerInfo(props) {
                         <h2>State: {state}</h2>
                         <h2>Phone Number: {phoneNumber}</h2> 
                     </div>
-                    <button onClick={() => setEditStatus(true)}>Edit Info</button>
+                    <button className='toggle-edit' onClick={() => setEditStatus(true)}>Edit Info</button>
                 </div>
             )
         } else {
             return (
                 <div className='edit-form'>
                     <form onSubmit={handleEditSubmit}>
-                        <label for='name'>Name:</label>
-                        <input 
-                            type='text'
-                            name='name'
-                            id='name'
-                            placeholder='Name'
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            required
-                        />
-                        <label for='city'>City:</label>
-                        <input 
-                            type='text' 
-                            name='city'
-                            id='city'
-                            placeholder='City'
-                            value={city}
-                            onChange={(e) => setCity(e.target.value)}
-                            required
-                        />
-                        <label for='state'>State:</label>
-                        <input 
-                            type='text' 
-                            name='state'
-                            id='state'
-                            placeholder='State'
-                            value={state}
-                            onChange={(e) => setState(e.target.value)}
-                            required
-                        />
-                        <label for='phoneNumber'>Phone Number:</label>
-                        <input 
-                            type='text' 
-                            name='phoneNumber'
-                            id='phoneNumber'
-                            placeholder='Phone Number'
-                            value={phoneNumber}
-                            onChange={(e) => setPhoneNumber(e.target.value)}
-                            required
-                        />
-                        <button type='submit'>Submit</button>
+                        <div className="input-wrapper">
+                            <label for='name'>Name:</label>
+                            <input 
+                                type='text'
+                                name='name'
+                                id='name'
+                                placeholder='Name'
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                            />
+                            <label for='city'>City:</label>
+                            <input 
+                                type='text' 
+                                name='city'
+                                id='city'
+                                placeholder='City'
+                                value={city}
+                                onChange={(e) => setCity(e.target.value)}
+                                required
+                            />
+                            <label for='state'>State:</label>
+                            <input 
+                                type='text' 
+                                name='state'
+                                id='state'
+                                placeholder='State'
+                                value={state}
+                                onChange={(e) => setState(e.target.value)}
+                                required
+                            />
+                            <label for='phoneNumber'>Phone Number:</label>
+                            <input 
+                                type='text' 
+                                name='phoneNumber'
+                                id='phoneNumber'
+                                placeholder='Phone Number'
+                                value={phoneNumber}
+                                onChange={(e) => setPhoneNumber(e.target.value)}
+                                required
+                            />
+                            <button type='submit'>Submit</button>
+                        </div>
                     </form>
-                    <button onClick={() => setEditStatus(false)}>Return</button>
+                    <button className='toggle-edit' onClick={() => setEditStatus(false)}>Return</button>
                 </div>
             )
         }

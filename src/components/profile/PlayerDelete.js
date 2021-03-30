@@ -10,21 +10,23 @@ function PlayerDelete() {
     const protectDelete = () => {
         if (wantToDelete) {
             return (
-                <div>
+                <div className='delete-confirm'>
                     <h2>Are you sure</h2>
-                    <button onClick={() => handleAccountDelete()}>Yes</button>
-                    <button onClick={() => setWantToDelete(false)}>No</button>
+                    <div className="delete-option">
+                        <button onClick={() => handleAccountDelete()}>Yes</button>
+                        <button onClick={() => setWantToDelete(false)}>No</button>
+                    </div>
                 </div>
             )
         } else {
             return (
-                <button onClick={() => setWantToDelete(true)}>Delete Account</button>
+                <button className='delete-check' onClick={() => setWantToDelete(true)}>Delete Account</button>
             )
         }
     }
 
     return (
-        <div>
+        <div className='delete-wrapper'>
             {protectDelete()}
         </div>
     )
