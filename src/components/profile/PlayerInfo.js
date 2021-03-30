@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import {API_URL} from './../API_URL'
 
 function PlayerInfo(props) {
     const [editStatus, setEditStatus] = useState(false)
@@ -19,7 +20,7 @@ function PlayerInfo(props) {
         e.preventDefault()
         axios({
             method: 'post',
-            url:  `http://localhost:5000/api/edit-player/${localStorage.getItem('playerId')}`,
+            url:  `${API_URL}/edit-player/${localStorage.getItem('playerId')}`,
             data: {
                 name,
                 city,

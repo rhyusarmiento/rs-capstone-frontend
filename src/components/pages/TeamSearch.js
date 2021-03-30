@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import {API_URL} from './../API_URL'
 
 import TeamItem from './../player-main/TeamItem'
 
@@ -11,7 +12,7 @@ function TeamSearch() {
         e.preventDefault()
         axios({
             method: 'get',
-            url: 'http://localhost:5000/api/get-teams',
+            url: `${API_URL}/get-teams`,
             withCredentials: true
         })
             .then(res => {

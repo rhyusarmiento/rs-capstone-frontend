@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
+import {API_URL} from './../API_URL'
 
 import AuthContext from '../../contexts/AuthContext'
 
@@ -18,7 +19,7 @@ function Register() {
         e.preventDefault()
         axios({
             method: 'post',
-            url: `http://localhost:5000/api/register`,
+            url: `${API_URL}/register`,
             data: {
                 username,
                 password,
@@ -32,7 +33,7 @@ function Register() {
             .then(res => {
                 axios({
                     method: 'post',
-                    url: `http://localhost:5000/api/login`,
+                    url: `${API_URL}/login`,
                     data: {
                         username, 
                         password,

@@ -1,5 +1,6 @@
 import React, {useState, useEffect } from 'react'
 import axios from 'axios'
+import {API_URL} from './../API_URL'
 
 import PlayerInfo from './PlayerInfo'
 import LogoutButton from './LogoutButton'
@@ -14,7 +15,7 @@ function Profile() {
     useEffect(() => {
         axios({
             method: 'get',
-            url: `http://localhost:5000/api/get-single-player/${localStorage.getItem('playerId')}`,
+            url: `${API_URL}/get-single-player/${localStorage.getItem('playerId')}`,
             withCredentials: true
         })
             .then(res => {

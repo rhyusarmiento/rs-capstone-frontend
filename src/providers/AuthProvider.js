@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
+import {API_URL} from './../API_URL'
 
 import AuthContext from '../contexts/AuthContext'
 
@@ -11,7 +12,7 @@ const AuthProvider = (props) => {
     useEffect(() => {
         axios({
             method: 'get',
-            url: 'http://localhost:5000/api/logged-in',
+            url: `${API_URL}/logged-in`,
             withCredentials: true
         })
             .then(res => {
@@ -34,7 +35,7 @@ const AuthProvider = (props) => {
     const handleAccountDelete = () => {
         axios({
             method: 'delete',
-            url: `http://localhost:5000/api/delete-player/${localStorage.getItem('playerId')}`,
+            url: `${API_URL}/delete-player/${localStorage.getItem('playerId')}`,
             withCredentials: true
         })
             .then(res => {
@@ -58,7 +59,7 @@ const AuthProvider = (props) => {
     const handleSuccessfulLogout = () => {
         axios({
             method: 'post',
-            url: "http://localhost:5000/api/logout",
+            url: `${API_URL}/logout`,
             withCredentials: true
         })
             .then(res => {

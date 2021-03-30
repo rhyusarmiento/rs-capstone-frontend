@@ -14,7 +14,7 @@ function AuthForm() {
         e.preventDefault()
         axios({
             method: 'post',
-            url: `http://localhost:5000/api/login`,
+            url: `${API_URL}/login`,
             data: {
                 username, 
                 password,

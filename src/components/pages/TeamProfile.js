@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import {API_URL} from './../API_URL'
 
 function TeamProfile() {
     const [name, setName] = useState(null)
@@ -11,7 +12,7 @@ function TeamProfile() {
     useEffect(() => {
         axios({
             method: 'get',
-            url: `http://localhost:5000/api/get-single-team/${sessionStorage.getItem('tempTeamId')}`,
+            url: `${API_URL}/get-single-team/${sessionStorage.getItem('tempTeamId')}`,
             withCredentials: true
         })
             .then(res => {
@@ -26,7 +27,7 @@ function TeamProfile() {
 
         axios({
             method: 'get',
-            url: `http://localhost:5000/api/get-teams-player/${localStorage.getItem('playerId')}`,
+            url: `${API_URL}/get-teams-player/${localStorage.getItem('playerId')}`,
             withCredentials: true
         })
             .then(res => {
@@ -44,7 +45,7 @@ function TeamProfile() {
     const handleLeave = () => {
         axios({
             method: 'get',
-            url: `http://localhost:5000/api/player-leave-team/${localStorage.getItem('playerId')}/${sessionStorage.getItem('tempTeamId')}`,
+            url: `${API_URL}/player-leave-team/${localStorage.getItem('playerId')}/${sessionStorage.getItem('tempTeamId')}`,
             withCredentials: true
         })
             .then(res => {
@@ -58,7 +59,7 @@ function TeamProfile() {
     const handleJoin = () => {
         axios({
             method: 'get',
-            url: `http://localhost:5000/api/player-join-team/${localStorage.getItem('playerId')}/${sessionStorage.getItem('tempTeamId')}`,
+            url: `${API_URL}/player-join-team/${localStorage.getItem('playerId')}/${sessionStorage.getItem('tempTeamId')}`,
             withCredentials: true
         })
             .then(res => {

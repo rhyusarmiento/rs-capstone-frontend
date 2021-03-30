@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import {API_URL} from './../API_URL'
 
 import TeamItem from './TeamItem'
 
@@ -9,7 +10,7 @@ function PlayerTeamDisplay() {
     useEffect(() => {
         axios({
             method: 'get',
-            url: `http://localhost:5000/api/get-teams-player/${localStorage.getItem('playerId')}`,
+            url: `${API_URL}/get-teams-player/${localStorage.getItem('playerId')}`,
             withCredentials: true
         })
             .then(res => {
