@@ -16,6 +16,24 @@
             align-items: flex-start;
             flex-direction: column;
             font-size: 1.5rem;
+
+            .player-info {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .info {
+                    width: 100%;
+                }
+
+                button {
+                    margin-top: 20px;
+                    padding: 10px 15px;
+                    background-color: white;
+                    border-color: $navgreen;
+                }
+            }
         }
 
         .profile-settings-wrapper {

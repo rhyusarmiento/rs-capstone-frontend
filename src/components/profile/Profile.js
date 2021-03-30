@@ -3,6 +3,7 @@ import axios from 'axios'
 
 import PlayerInfo from './PlayerInfo'
 import LogoutButton from './LogoutButton'
+import PlayerDelete from './PlayerDelete'
 
 function Profile() {
     const [name, setName] = useState('')
@@ -38,6 +39,7 @@ function Profile() {
                 />
                 <div className="profile-settings-wrapper">
                     <LogoutButton />
+                    <PlayerDelete />
                 </div>
             </div>
         </div>

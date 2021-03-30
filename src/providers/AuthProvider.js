@@ -31,6 +31,22 @@ const AuthProvider = (props) => {
             .catch(err => console.log(err))
     }, [history])
 
+    const handleAccountDelete = () => {
+        axios({
+            method: 'delete',
+            url: `http://localhost:5000/api/delete-player/${localStorage.getItem('playerId')}`,
+            withCredentials: true
+        })
+            .then(res => {
+                setLoggedInStatus('NOT_LOGGED_IN')
+                sessionStorage.clear()
+                localStorage.clear()
+                history.push('/')
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
 
     const handleSuccessfulLogin = (res) => {
         setLoggedInStatus('LOGGED_IN')
@@ -60,6 +76,7 @@ const AuthProvider = (props) => {
         setLoggedInStatus,
         handleSuccessfulLogout,
         handleSuccessfulLogin,
+        handleAccountDelete
     }
 
     return (

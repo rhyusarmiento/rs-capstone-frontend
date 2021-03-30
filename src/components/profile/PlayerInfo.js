@@ -29,7 +29,6 @@ function PlayerInfo(props) {
             withCredentials: true
         })
             .then(res => {
-                console.log(res)
                 setEditStatus(false)
             })
             .catch(err => {
@@ -41,10 +40,12 @@ function PlayerInfo(props) {
         if (!editStatus) {
             return (
                 <div className='player-info'>
-                    <h2>Name: {name}</h2>
-                    <h2>City: {city}</h2>
-                    <h2>State: {state}</h2>
-                    <h2>Phone Number: {phoneNumber}</h2> 
+                    <div className="info">
+                        <h2>Name: {name}</h2>
+                        <h2>City: {city}</h2>
+                        <h2>State: {state}</h2>
+                        <h2>Phone Number: {phoneNumber}</h2> 
+                    </div>
                     <button onClick={() => setEditStatus(true)}>Edit Info</button>
                 </div>
             )
