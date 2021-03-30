@@ -1,0 +1,15 @@
+.navigation {
+    width: 100%;
+    height: 50px;
+    background-color: $navgreen;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 2rem;
+        margin: auto 25px;
+    }
+}

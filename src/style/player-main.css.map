@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,oBAAoB,CAAC;EACjB,SAAS,EAAE,IAAI;CAClB",
+    "sources": [
+        "player-main.scss"
+    ],
+    "names": [],
+    "file": "player-main.css"
+}
