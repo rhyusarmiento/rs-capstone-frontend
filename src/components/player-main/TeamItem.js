@@ -7,8 +7,10 @@ function TeamItem(props) {
     }
 
     return (
-        <div>
-            {props.team.name}
+        <div className='display-item'>
+            <div className="item-content-wrapper">
+                <h2>{props.team.name}</h2>
+            </div>
             <NavLink onClick={handleTeamRoute} to={`/team-profile/${props.team.id}`}>...Go to</NavLink>
         </div>
     )

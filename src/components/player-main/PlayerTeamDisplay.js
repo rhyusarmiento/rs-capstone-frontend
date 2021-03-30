@@ -36,7 +36,7 @@ function PlayerTeamDisplay() {
     }
 
     return (
-        <div>
+        <div className='display-wrapper'>
             {teamItems()}
         </div>
     )

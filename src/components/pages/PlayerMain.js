@@ -8,9 +8,15 @@ import PlayerTeamDisplay from '../player-main/PlayerTeamDisplay'
 function PlayerMain() {
     return (
         <div className='player-main-wrapper'>
-            Home Page
-            <PlayerTeamDisplay />
-            <NavLink to='/team-search'>Find More Teams...</NavLink>
+            <div className="player-main-content-wrapper">
+                <div className="player-team-display-wrapper">
+                    <h3>Your Teams</h3>
+                    <PlayerTeamDisplay />
+                    <div className="search-link-wrapper">
+                        <NavLink to='/team-search'>Find More Teams...</NavLink>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

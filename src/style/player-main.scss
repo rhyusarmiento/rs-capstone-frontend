@@ -1,3 +1,61 @@
 .player-main-wrapper {
-    font-size: 2rem;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+
+    .player-main-content-wrapper {
+        grid-column: 2;
+
+        .player-team-display-wrapper {
+            display: flex;
+            flex-direction: column;
+    
+            h3 {
+                margin-bottom: 5px;
+                color: $navgreen;
+                font-size: 3rem;
+            }
+    
+            .display-wrapper {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, 200px);
+                grid-template-rows: 200px;
+                gap: 20px;
+    
+                .display-item {
+                    height: 100%;
+                    width: 100%;
+                    background-color: $navgreen;
+                    color: white;
+                    @include super-center;
+                    flex-direction: column;
+                    
+                    .item-content-wrapper {
+                        font-size: 1.7rem;
+                        width: 80%;
+                        height: 150px;
+                        @include super-center;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: black;
+                        font-size: 2rem;
+                    }
+                }
+            }
+    
+            .search-link-wrapper {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                    font-size: 1.9rem;
+                }
+            }
+        }
+    }
 }
