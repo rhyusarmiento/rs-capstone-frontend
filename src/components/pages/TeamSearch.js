@@ -26,7 +26,7 @@ function TeamSearch() {
     const teamItems = () => {
         if (filteredTeams.length === 0) {
             return (
-                <div>No Teams</div>
+                <h2 className='no-team'>No Teams Matched Your Search</h2>
             )
         } else {
             return filteredTeams.map(team => {
@@ -38,19 +38,28 @@ function TeamSearch() {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type='text' 
-                    name='keyWord'
-                    placeholder='Search By Name'
-                    value={keyWord}
-                    onChange={(e) => setKeyWord(e.target.value)}
-                    required
-                />
-                <button type='submit'>Search</button>
-            </form>
-            {teamItems()}
+        <div className='team-search-wrapper'>
+            <div className="team-search-content">
+                <div className="search-wrapper">
+                    <form onSubmit={handleSubmit}>
+                        <input 
+                            type='text' 
+                            name='keyWord'
+                            placeholder='Search By Name'
+                            value={keyWord}
+                            onChange={(e) => setKeyWord(e.target.value)}
+                            required
+                        />
+                        <button type='submit'>Search</button>
+                    </form>
+                </div>
+                <div className="team-result-wrapper">
+                    <h1>Results</h1>
+                    <div className="team-results">
+                        {teamItems()}
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

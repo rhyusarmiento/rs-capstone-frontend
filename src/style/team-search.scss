@@ -1,0 +1,65 @@
+.team-search-wrapper {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 20% 1fr 20%;
+
+    .team-search-content {
+        grid-column: 2;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .search-wrapper {
+            width: 100%;
+            height: 130px;
+            @include super-center;
+        }
+
+        .team-result-wrapper {
+            width: 400px;
+
+            h1 {
+                color: $navgreen;
+                font-size: 3rem;
+            }
+
+            .team-results {
+                margin-top: 20px;
+                display: grid;
+                grid-template-columns: 20px auto 20px;
+                grid-template-rows: repeat(auto-fit, 80px);
+                row-gap: 15px;
+
+                .no-team {
+                    grid-column: 2;
+                    font-size: 2rem;
+                }
+
+                .display-item {
+                    grid-column: 2;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $navgreen;
+
+                    .item-content-wrapper {
+                        height: 60px;
+                        @include super-center;
+
+                        h2 {
+                            margin: 0px;
+                            color: white;
+                            font-size: 2rem;
+                        }
+                    }
+
+                    a {
+                        margin-left: 20px;
+                        font-size: 1.3rem;
+                        color: white;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
