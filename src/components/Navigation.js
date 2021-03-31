@@ -15,27 +15,41 @@ function Navigation() {
 
     return (
         <div className='navigation'>
-            <div className="left-nav">
-                <div className='logo'>
-                    {/* TODO: logo; TEMP: home */}
+            <div className="botton-nav">
+                <div className='home'>
+                    {/* TODO: logo; Temp: home */}
                     <NavLink to='/player-main' className='navlink'>Home</NavLink>
                 </div>
-                <div className="search-wrapper">
-                    <form onSubmit={handleSubmit}>
-                        <input 
-                            type='text' 
-                            name='keyWord'
-                            placeholder='Search By Name'
-                            value={keyWord}
-                            onChange={(e) => setKeyWord(e.target.value)}
-                            required
-                        />
-                        <button type='submit'>Search</button>
-                    </form>
+                <div className="search-button">
+                    Search
+                </div>
+                <div className="profile">
+                    <NavLink to='/profile' className='navlink'>Profile</NavLink>
                 </div>
             </div>
-            <div className="right-nav">
-                <NavLink to='/profile' className='navlink'>Profile</NavLink>
+            <div className="top-nav">
+                <div className="left-nav">
+                    <div className='logo'>
+                        {/* TODO: logo; Temp: home */}
+                        <NavLink to='/player-main' className='navlink'>Home</NavLink>
+                    </div>
+                    <div className="search-wrapper">
+                        <form onSubmit={handleSubmit}>
+                            <input 
+                                type='text' 
+                                name='keyWord'
+                                placeholder='Search By Name'
+                                value={keyWord}
+                                onChange={(e) => setKeyWord(e.target.value)}
+                                required
+                            />
+                            <button type='submit'>Search</button>
+                        </form>
+                    </div>
+                </div>
+                <div className="right-nav">
+                    <NavLink to='/profile' className='navlink'>Profile</NavLink>
+                </div>
             </div>
         </div>
     )
