@@ -7,12 +7,11 @@ function TeamItem(props) {
     }
 
     return (
-        <div className='display-item'>
+        <NavLink className='display-item' onClick={handleTeamRoute} to={`/team-profile/${props.team.id}`}>
             <div className="item-content-wrapper">
                 <h2>{props.team.name}</h2>
             </div>
-            <NavLink onClick={handleTeamRoute} to={`/team-profile/${props.team.id}`}>...Go to</NavLink>
-        </div>
+        </NavLink>
     )
 }
 

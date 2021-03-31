@@ -21,7 +21,11 @@
                 grid-template-columns: repeat(auto-fit, 200px);
                 grid-template-rows: 200px;
                 gap: 20px;
-    
+
+                .no-teams {
+                    font-size: 2rem;
+                }
+                
                 .display-item {
                     height: 100%;
                     width: 100%;
@@ -29,18 +33,14 @@
                     color: white;
                     @include super-center;
                     flex-direction: column;
+                    text-decoration: none;
+
                     
                     .item-content-wrapper {
                         font-size: 1.7rem;
                         width: 80%;
                         height: 150px;
                         @include super-center;
-                    }
-
-                    a {
-                        text-decoration: none;
-                        color: black;
-                        font-size: 2rem;
                     }
                 }
             }

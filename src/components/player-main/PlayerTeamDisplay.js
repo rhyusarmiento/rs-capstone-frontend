@@ -25,7 +25,7 @@ function PlayerTeamDisplay() {
     const teamItems = () => {
         if (playerTeams.length === 0) {
             return (
-                <div>You have Joined no Teams</div>
+                <div className='no-teams'>You have Joined no Teams</div>
             )
         } else {
             return playerTeams.map(team => {
