@@ -1,7 +1,12 @@
 .profile-wrapper {
     display: grid;
-    grid-template-columns: 20% 1fr 20%;
     height: 100vh;
+    @media (max-width: 1100px) {
+        grid-template-columns: 20px auto 20px;
+    }
+    @media (min-width: 1100px) {
+        grid-template-columns: auto 1000px auto;
+    }
     
     .profile-content-wrapper {
         grid-column: 2;

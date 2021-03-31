@@ -2,9 +2,10 @@ import React, {useState, useEffect } from 'react'
 import axios from 'axios'
 import {API_URL} from '../../API_URL'
 
-import PlayerInfo from './PlayerInfo'
-import LogoutButton from './LogoutButton'
-import PlayerDelete from './PlayerDelete'
+import PlayerInfo from '../profile/PlayerInfo'
+import LogoutButton from '../profile/LogoutButton'
+import PlayerDelete from '../profile/PlayerDelete'
+// import CreateTeam from '../profile/CreateTeam'
 
 function Profile() {
     const [name, setName] = useState('')
@@ -38,6 +39,7 @@ function Profile() {
                     state={state}
                     phoneNumber={phoneNumber}
                 />
+                {/* <CreateTeam /> */}
                 <div className="profile-settings-wrapper">
                     <LogoutButton />
                     <PlayerDelete />
