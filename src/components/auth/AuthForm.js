@@ -25,7 +25,10 @@ function AuthForm() {
             .then(res => {
                 handleSuccessfulLogin(res)
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err)
+                alert('Username Or Password Are Invaild')
+            })
     }
 
     return (
