@@ -4,14 +4,23 @@
     height: 100vh;
 
     h1 {
+        @media (max-width: 560px) {
+            padding-top: 25px;
+        }
         font-size: 3rem;
         color: $navgreen;
     }
 
     .register-form-wrapper {
+        @media (max-width: 560px) {
+            width: 320px;
+            height: 500px;
+        }
+        @media (min-width: 560px) {
+            width: 500px;
+            height: 550px;
+        }
         @include super-center;
-        width: 40%;
-        height: 550px;
         background-color: $navgreen;
 
         form {
@@ -29,13 +38,25 @@
                 align-items: center;
 
                 input {
-                    padding: 10px 20px;
-                    font-size: 2rem;
+                    @media (max-width: 560px) {
+                        padding: 10px 20px;
+                        font-size: 1.8rem;
+                    }
+                    @media (min-width: 560px) {
+                        padding: 10px 20px;
+                        font-size: 2rem;
+                    }
                 }
             }
 
             button {
-                margin-top: 15px;
+                @media (max-width: 560px) {
+                    margin-top: 20px;
+                    font-size: 1.8rem;
+                }
+                @media (min-width: 560px) {
+                    margin-top: 15px;
+                }
                 padding: 10px 20px;
                 background-color: white;
             }
@@ -43,9 +64,17 @@
     }
 
     a {
-        margin-top: 10px;
+        @media (max-width: 560px) {
+            margin-top: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        @media (min-width: 560px) {
+            margin-top: 10px;
+            font-size: 2rem;
+        }
         text-decoration: none;
         color: black;
-        font-size: 2rem;
     }
+    
 }
