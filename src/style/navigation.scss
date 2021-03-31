@@ -2,23 +2,22 @@
     height: 100vh;
     width: 100vw;
     @media (max-width: 600px) {
-        display: grid;
-        grid-template-rows: auto 70px;
-    }
-    @media (max-width: 600px) {
         .body {
-            grid-row: 1;
+            padding-bottom: 70px;
+        }
+    }
+    @media (min-width: 600px) {
+        .body {
+            padding-top: 55px;
         }
     }
 
     .navigation {
         @media (max-width: 600px) {
-            grid-row: 2;
-            height: 100%;
+            bottom: 0;
         }
-        @media (min-width: 600px) {
-            height: 55px;
-        }
+        height: 55px;
+        position: fixed;
         font-size: 2rem;
         width: 100vw;
         background-color: $navgreen;
@@ -28,7 +27,33 @@
             color: white;
         }
         
-        
+        .botton-nav {
+            @media (max-width: 600px) {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                height: 100%;
+            }
+            @media (min-width: 600px) {
+                display: none;
+            }
+            color: white;
+            
+            .home {
+                grid-column: 1;
+                @include super-center;
+            }
+            
+            .search-button {
+                grid-column: 2;
+                @include super-center;
+            }
+            
+            .profile {
+                grid-column: 3;
+                @include super-center;
+            }
+        }
+
         .top-nav {
             @media (max-width: 600px) {
                 display: none;
@@ -38,7 +63,7 @@
                 grid-template-columns: 400px auto 200px;
                 height: inherit;
             }
-
+        
             .left-nav {
                 grid-column: 1;
                 display: flex;
@@ -51,33 +76,6 @@
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
-            }
-        }
-
-        .botton-nav {
-            @media (max-width: 600px) {
-                display: grid;
-                grid-template-columns: auto auto auto;
-                height: inherit;
-            }
-            @media (min-width: 600px) {
-                display: none;
-            }
-            color: white;
-
-            .home {
-                grid-column: 1;
-                @include super-center;
-            }
-
-            .search-button {
-                grid-column: 2;
-                @include super-center;
-            }
-
-            .profile {
-                grid-column: 3;
-                @include super-center;
             }
         }
     }

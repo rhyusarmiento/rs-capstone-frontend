@@ -17,10 +17,10 @@ function Navigation() {
         <div className='navigation'>
             <div className="botton-nav">
                 <div className='home'>
-                    {/* TODO: logo; Temp: home */}
                     <NavLink to='/player-main' className='navlink'>Home</NavLink>
                 </div>
                 <div className="search-button">
+                    {/* TODO: search link; Temp: none */}
                     Search
                 </div>
                 <div className="profile">
