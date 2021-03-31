@@ -43,17 +43,46 @@
                         @include super-center;
                     }
                 }
+            }  
+        }
+
+        .near-teams {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+    
+            h3 {
+                margin-bottom: 5px;
+                color: $navgreen;
+                font-size: 3rem;
             }
     
-            .search-link-wrapper {
-                width: 100%;
-                display: flex;
-                justify-content: flex-end;
+            .display-wrapper {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, 200px);
+                grid-template-rows: 200px;
+                gap: 20px;
 
-                a {
+                .no-teams {
+                    font-size: 2rem;
+                }
+                
+                .display-item {
+                    height: 100%;
+                    width: 100%;
+                    background-color: $navgreen;
+                    color: white;
+                    @include super-center;
+                    flex-direction: column;
                     text-decoration: none;
-                    color: black;
-                    font-size: 1.9rem;
+
+                    
+                    .item-content-wrapper {
+                        font-size: 1.7rem;
+                        width: 80%;
+                        height: 150px;
+                        @include super-center;
+                    }
                 }
             }
         }
