@@ -22,7 +22,6 @@ function App() {
         <div>
           <Route exact path="/" component={Landing}/> 
           <Route path="/register" component={Register}/>
-          <Route component={NoMatch} />
         </div>
       )
     } else if (loggedInStatus === 'LOGGED_IN') {
@@ -40,7 +39,6 @@ function App() {
             />
             <Route path='/team-search' component={TeamSearch} />
             <Route path='/team-create' component={TeamCreation} />
-            {/* <Route component={NoMatch} /> */}
           </div>
         </div>
       )      
